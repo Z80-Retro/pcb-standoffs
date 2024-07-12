@@ -30,7 +30,12 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 M25_dia=2.5;        // hole diameter for a self-threaded M2.5 bolt
-standoff_height=14; // total height of the standoff
+
+
+// The standoff height depends on the type of header connectors you use
+
+standoff_height=14; // for the VDP (long pin fewmale from Adafruit)
+//standoff_height=11; // for the FLASH programmer (standard female header)
 
 $fn=30;             // make sure the center is round (make it have 30 facets)
 
