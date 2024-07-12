@@ -1,3 +1,4 @@
+/*
 BSD 2-Clause License
 
 Copyright (c) 2024, John Winans
@@ -22,3 +23,24 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
+
+// This is a 3D printable standoff suitable for stacking boards on
+// the Z80 Retro!
+
+
+M25_dia=2.5;        // hole diameter for a self-threaded M2.5 bolt
+standoff_height=14; // total height of the standoff
+
+$fn=30;             // make sure the center is round (make it have 30 facets)
+
+standoff();
+
+module standoff()
+{
+    difference()
+    {
+        cube([5,5,standoff_height], center=true);
+        cylinder(d=M25_dia, h=standoff_height+1, center=true);
+    }
+}
