@@ -45,7 +45,8 @@ module standoff()
 {
     difference()
     {
-        cube([5,5,standoff_height], center=true);
+        cube([5,5,standoff_height], center=true);           // use this for square
+//		cylinder (d=7, h=standoff_height, center=true);     // use this for round
         cylinder(d=M25_dia, h=standoff_height+1, center=true);
     }
 }
